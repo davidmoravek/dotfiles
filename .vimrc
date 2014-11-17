@@ -18,6 +18,8 @@ Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 
@@ -43,8 +45,14 @@ let g:airline_powerline_fonts = 1
 colorscheme solarized
 set background=dark
 
+" ctrlp
+let g:ctrlp_map = '<C-P>'
+
 " custom mappings
-map <S-j> :tabprev<CR>
-map <S-k> :tabnext<CR>
-map <S-t> :tabnew<CR>
-map <S-w> :tabclose<CR>
+map <S-J> :tabprev<CR>
+map <S-K> :tabnext<CR>
+map <S-T> :tabnew<CR>
+map <S-W> :tabclose<CR>
+
+map <C-J> :bprevious<CR>
+map <C-K> :bnext<CR>
