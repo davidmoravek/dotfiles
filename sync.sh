@@ -17,4 +17,4 @@ else
 fi
 
 unset doSync
-source ~/.bash_profile
+source ~/.bashrc
