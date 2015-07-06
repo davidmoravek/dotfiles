@@ -20,6 +20,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'kien/ctrlp.vim'
+Plugin 'godlygeek/tabular'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -37,13 +40,18 @@ set hlsearch
 set smartindent
 
 " airline
-set laststatus=2 
+set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 
 " colors
 colorscheme solarized
 set background=dark
+
+set listchars=tab:▸—,eol:.,nbsp:_
+
 
 " ctrlp
 let g:ctrlp_map = '<C-P>'
@@ -56,3 +64,14 @@ map <S-W> :tabclose<CR>
 
 map <C-J> :bprevious<CR>
 map <C-K> :bnext<CR>
+map <S-W> :bclose<CR>
+
+function! ListToggle()
+	if &list
+		set nolist
+	else
+		set list
+	endif
+endfunction
+
+map <S-B> :cal ListToggle()<cr>
